@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoreGuard Helmet 소개</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    .container {
+      width: 100%;
+    }
+    section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(80px);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    h1, h2 {
+      margin: 0 0 1rem 0;
+      text-align: center;
+      z-index: 1;
+    }
+    .highlight {
+      font-size: 2.8rem;
+      color: #00ffd5;
+      font-weight: bold;
+    }
+    .text {
+      font-size: 1.25rem;
+      max-width: 800px;
+      text-align: center;
+      line-height: 1.8;
+      z-index: 1;
+    }
+    .section-dark {
+      background-color: #111;
+    }
+    .section-light {
+      background-color: #1a1a1a;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 0;
+    }
+    img {
+      margin-top: 1.5rem;
+      width: 260px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #444;
+      opacity: 0;
+      transform: scale(0.95);
+      z-index: 1;
+    }
+
+    /* ✅ 모바일 최적화 CSS */
+    @media (max-width: 768px) {
+      section {
+        background-attachment: scroll;
+      }
+      .text {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+      .highlight {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="section-dark" style="background-image: url('images/bg_overview.jpg');">
+      <h1 class="highlight">🪖 스마트 안전모 기능</h1>
+      <div class="text">
+        CoreGuard Helmet는 산업 현장 근로자의 안전을 위한 첨단 기술이 집약된 스마트 헬멧입니다.<br />
+        생체 인식, 영상 기록, 음성 통신, 실시간 알림 기능이 통합되어<br />
+        사고를 예방하고 현장을 보다 효율적으로 관리할 수 있도록 돕습니다.
+      </div>
+      <img src="image_helmet.png" alt="스마트 헬멧" />
+    </section>
+
+    <section class="section-light" style="background-image: url('images/bg_brain.jpg');">
+      <h2>🧠 뇌파 센서 탑재</h2>
+      <div class="text">
+        헬멧에 내장된 뇌파 센서는 착용자의 생체 신호를 측정합니다.<br />
+        피로도, 스트레스, 집중도 등을 실시간으로 감지하여,<br />
+        위험 상황이나 사고 발생 가능성을 사전에 파악할 수 있습니다.
+      </div>
+      <img src="image_screenshot.png" alt="뇌파 센서" />
+    </section>
+
+    <section class="section-dark" style="background-image: url('images/bg_record.jpg');">
+      <h2>📷 소형 탈부착 카메라</h2>
+      <div class="text">
+        탈부착이 가능한 고해상도 카메라는 작업자의 시점에서 현장을 기록합니다.<br />
+        위험 순간을 블랙박스처럼 저장하거나, 실시간 중계 기능도 가능하여<br />
+        관리자에게 현장 상황을 실시간으로 전달할 수 있습니다.
+      </div>
+      <img src="image_camera.png" alt="헬멧 카메라" />
+    </section>
+
+    <section class="section-light" style="background-image: url('images/bg_audio.jpg');">
+      <h2>🎧 골전도 블루투스 이어폰</h2>
+      <div class="text">
+        골전도 이어폰은 귀를 막지 않으면서도 선명한 음성 전달이 가능합니다.<br />
+        관리자와의 양방향 소통은 물론, 자동 알림 방송도 수신할 수 있어<br />
+        소음이 있는 환경에서도 원활한 커뮤니케이션을 지원합니다.
+      </div>
+      <img src="image_earpod.png" alt="골전도 이어폰" />
+    </section>
+
+    <section class="section-dark" style="background-image: url('images/bg_alert.jpg');">
+      <h2>⚠️ 긴급상황 자동 알림</h2>
+      <div class="text">
+        뇌파 이상, 낙상 감지, 강한 충격 등의 신호가 감지되면<br />
+        시스템은 자동으로 관리자에게 긴급 알림을 전송합니다.<br />
+        사고 발생 시 신속한 대응이 가능해 인명 피해를 최소화할 수 있습니다.
+      </div>
+      <img src="image_alert.png" alt="긴급 알림" />
+    </section>
+
+    <section class="section-light" style="background-image: url('images/bg_data.jpg');">
+      <h2>📊 작업기록 자동화</h2>
+      <div class="text">
+        카메라 영상과 생체정보가 자동으로 기록되고 분석됩니다.<br />
+        작업자의 활동 이력은 데이터로 축적되어, 교육 자료나 리스크 분석에 활용됩니다.<br />
+        현장 관리를 데이터 기반으로 혁신할 수 있습니다.
+      </div>
+      <img src="image_data.png" alt="작업 데이터" />
+    </section>
+  </div>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray("section").forEach(section => {
+      gsap.fromTo(section,
+        { opacity: 0, y: 80 },
+        {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1
+        }
+      );
+
+      const img = section.querySelector("img");
+      if (img) {
+        gsap.fromTo(img,
+          { opacity: 0, scale: 0.95 },
+          {
+            scrollTrigger: {
+              trigger: img,
+              start: "top 85%",
+              toggleActions: "play reverse play reverse"
+            },
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power2.out"
+          }
+        );
+      }
+    });
+  </script>
+</body>
+</html>
